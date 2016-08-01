@@ -28,15 +28,17 @@ angular.module('flapperNews', [])
         };
 
         vm.addPost = function () {
-            if (!vm.title || vm.title === '') {
+            if (!vm.titleToAdd || vm.titleToAdd === '') {
                 return ;
             }
             vm.posts.push({
-                title: vm.title,
+                title: vm.titleToAdd,
                 upvotes: 0,
-                upvotedUsers: []
+                upvotedUsers: [],
+                link: vm.linkToAdd
             });
-            vm.title = '';
+            vm.titleToAdd = '';
+            vm.linkToAdd = '';
         };
 
 
@@ -55,6 +57,8 @@ angular.module('flapperNews', [])
             post.upvotedUsers.splice(post.upvotedUsers.indexOf(vm.currentUser), 1);
             post.upvotes -= 1;
         }
+
+
 
     }]);
 
