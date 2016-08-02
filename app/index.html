@@ -23,7 +23,24 @@
 
 <body ng-app="flapperNews" ng-controller="MainCtrl as vmMain">
 
+<!-- NAVIGATION -->
+<nav class="nav">
+    <div class="navbar-header">
+        <a class="navbar-brand" ui-href="#">Portal</a>
+    </div>
+    <ul class="nav navbar-nav">
+        <li>
+            <a ui-sref="home">Home</a>
+        </li>
+        <li>
+            <a ui-sref="dashboard">Dashboard</a>
+        </li>
+    </ul>
+</nav>
+
 <div class="container">
+
+    <div ui-view></div>
 
     <table class="table">
         <tr>
@@ -91,9 +108,10 @@
 -->
 <script src="bower_components/angular/angular.js"></script>
 <script src="bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/angular-ui-router/release/angular-ui-router.min.js"></script>
 <script src="app.js"></script>
-<script src="view1/view1.js"></script>
-<script src="view2/view2.js"></script>
+<script src="views/home/home.js"></script>
+<script src="views/dashboard/dashboard.js"></script>
 <script src="components/version/version.js"></script>
 <script src="components/version/version-directive.js"></script>
 <script src="components/version/interpolate-filter.js"></script>
